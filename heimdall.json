@@ -1,0 +1,37 @@
+  {
+    "type": 1,
+    "title": "Heimdall 9080/9443",
+    "name": "heimdall 9080/9443",
+    "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/heimdall-icon.png",
+    "image": "linuxserver/heimdall:latest",
+    "categories": [
+      "Tools",
+      "Web",
+      "Other"
+    ],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "9080/tcp",
+      "9443/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/Heimdall"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "1000"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "100"
+      }
+    ]
+  }
